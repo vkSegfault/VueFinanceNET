@@ -19,13 +19,14 @@ if (app.Environment.IsDevelopment())
     // app.MapOpenApi();
     
     // swagger is no longer included in dotnet 9
-    app.UseSwagger(options =>
-        {
-            options.RouteTemplate = "openapi/{documentName}/openapi.json";
-        });
-    // app.UseSwaggerUI();
+    // app.UseSwagger(options =>
+    //     {
+    //         options.RouteTemplate = "openapi/{documentName}/openapi.json";
+    //     });
+    app.UseSwagger();
+    app.UseSwaggerUI();
     
-    app.MapScalarApiReference();
+    // app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
